@@ -43,5 +43,5 @@ run("game={players:[{name:'Ana',score:0},{name:'Juan',score:0}],turn:0,history:[
 reject(50,/al menos 750/);
 run('addPoints(750)');
 assert.equal(run('loadGame().players[0].score'),750);
-assert.match(app.innerHTML,/Para entrar: mínimo 750/);
+assert.doesNotMatch(app.innerHTML,/points-hint|Meta:|Llegá a 7000/);
 console.log('OK: entrada por jugador, mínimo 50, múltiplos de 50, pasar sin entrar, turnos, exceso, victoria, deshacer entrada y guardado.');
